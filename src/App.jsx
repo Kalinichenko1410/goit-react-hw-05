@@ -14,15 +14,15 @@ const App = () => {
     <div>
       <Suspense fallback={<div>Loading...</div>}>
         <Header />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/movies" element={<MoviesPage />} />
-          <Route path="/movie/:movieId" element={<MovieDetails />}>
-            <Route path="cast" element={<Cast />} />
-            <Route path="reviews" element={<Reviews />} />
-          </Route>
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+       <Routes>
+  <Route path="/" element={<HomePage />} />
+  <Route path="/movies" element={<MoviesPage />} />
+  <Route path="/movies/:movieId" element={<MovieDetails />}>
+    <Route path="cast" element={<Cast />} />
+    <Route path="reviews" element={<Reviews />} />
+  </Route>
+  <Route path="*" element={<NotFound />} />
+</Routes>
       </Suspense>
     </div>
   );

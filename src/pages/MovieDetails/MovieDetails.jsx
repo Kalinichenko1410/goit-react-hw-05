@@ -38,8 +38,8 @@ const MoviePage = () => {
   return (
   
     <div className={s.wrapper}>
-      <button onClick={() => navigate(-1) }> ← Go back</button>
-      {/* <Link to={-1}>← Go back Link</Link> */}
+<button onClick={() => navigate(-1)}> ← Go back</button>
+
     <div className={s.movieCard}>
       <img className={s.poster} src={posterUrl} alt={`${movieDetails.title} poster`} width="300" /> 
       <div className={s.info}>

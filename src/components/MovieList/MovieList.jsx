@@ -6,7 +6,7 @@ const MovieList = ({ movies }) => {
       <ul>
         {movies.map(movie => (
           <li key={movie.id}>
-            <Link to={`/movie/${movie.id}`}>
+           <Link to={`/movies/${movie.id}`}>
               <h3>{movie.title} ({new Date(movie.release_date).getFullYear()})</h3>
             </Link>
           </li>
