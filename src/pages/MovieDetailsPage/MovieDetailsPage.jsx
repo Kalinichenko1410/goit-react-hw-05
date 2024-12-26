@@ -1,15 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { fetchMovieDetails } from "../../services/api"; 
-import {  NavLink, Outlet, useNavigate, useParams } from 'react-router-dom';
+import {  Link, NavLink, Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
 import s from "./MovieDetails.module.css";
-const MoviePage = () => {
+const MovieDetailsPage = () => {
   const { movieId } = useParams();  
 
-  const navigate = useNavigate();
-
+  
+  
  
   const [movieDetails, setMovieDetails] = useState(null); 
-
+  const location = useLocation();
+  console.log(location);
+  const goBackRef = useRef(location.state)
+   
 
   const userScore = Math.round(movieDetails?.vote_average * 10); 
 
@@ -38,7 +41,7 @@ const MoviePage = () => {
   return (
   
     <div className={s.wrapper}>
-<button onClick={() => navigate(-1)}> ← Go back</button>
+      <Link className={s.goBack} to={goBackRef.current ?? "/"}>← Go back</Link>
 
     <div className={s.movieCard}>
       <img className={s.poster} src={posterUrl} alt={`${movieDetails.title} poster`} width="300" /> 
@@ -101,4 +104,4 @@ const MoviePage = () => {
   );
 };
 
-export default MoviePage;
+export default MovieDetailsPage;

@@ -24,3 +24,17 @@ ul{
     height: 450px;
     margin-right: 20px;
 }
+.goBack {
+    color: black;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 7px;
+    cursor: pointer;
+    transition: 0.4s ease;
+    background-color: lightgray;
+}
+.goBack:hover{
+    background-color: darkgray;
+    border: 1px solid blue;
+    color: white;
+}
